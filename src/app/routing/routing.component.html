@@ -1,0 +1,30 @@
+<h2>Routing</h2>
+<p>Configurar archivo app-routing.module</p>
+<div>
+    <img src="../../assets/AppRouting.PNG">
+</div>
+<p>Agregar en app.component la etiqueta router-outlet para mostrar el componente deseado</p>
+<div>
+    <img src="../../assets/AppComponent.PNG">
+</div>
+<p>Crear un componente Indice, donde voy a agregar el comando routerLink para mostra el componente deseado</p>
+<div>
+    <img src="../../assets/Indice.PNG">
+</div>
+<h3>Routing Anidado - Rutas dinamicas</h3>
+<div><a routerLink="/routing/anidado1/1">Anidado 1</a></div>
+<div><a routerLink="/routing/anidado2/2">Anidado 2</a></div>
+<router-outlet></router-outlet>
+<hr>
+<p>Configurar en app-routing los routing children. Agregar "/:id" para pasar el valor del Parametro</p>
+<div>
+    <img src="../../assets/RoutingChildren.PNG">
+</div>
+<p>Agregar en el componente routing.component los links a los hijos y un nuevo "router-outlet"</p>
+<div>
+    <img src="../../assets/RoutingComponent.PNG">
+</div>
+<p>Para leer el valor del parametro, agregar "snapshot.paramMap.get" dentro de cada componente hijo</p>
+<div>
+    <img src="../../assets/ComponenteAnidado1.PNG">
+</div>

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InputComponent } from './input/input/input.component';
-import { IndiceComponent } from './indice/indice.component';
 import { RoutingComponent } from './routing/routing.component';
 import { Anidado1Component } from './routing/anidado1/anidado1.component';
 import { Anidado2Component } from './routing/anidado2/anidado2.component';
@@ -10,7 +9,7 @@ import { ListaComponent } from './service/lista/lista.component';
 import { DetalleComponent } from './service/detalle/detalle.component';
 
 const routes: Routes = [
-  { path: '', component: IndiceComponent},
+  { path: '', component: InputComponent},
   { path: 'input', component: InputComponent},
   { path: 'routing', component: RoutingComponent, children:[
     {path: 'anidado1/:id', component: Anidado1Component},

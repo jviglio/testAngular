@@ -14,6 +14,7 @@ import { Anidado2Component } from './routing/anidado2/anidado2.component';
 import { ServiceComponent } from './service/service.component';
 import { ListaComponent } from './service/lista/lista.component';
 import { DetalleComponent } from './service/detalle/detalle.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DetalleComponent } from './service/detalle/detalle.component';
     Anidado2Component,
     ServiceComponent,
     ListaComponent,
-    DetalleComponent
+    DetalleComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import { HttpClient} from "@angular/common/http"
+import { environment } from '../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {  
   private address = new BehaviorSubject<string>("");
-  
-  constructor() { 
+  url: string = environment.apiBaseUrl + '/WeatherForecast';
+  public clients: any;
+
+  constructor(private http: HttpClient) { 
   }
 
   setAddress(address: string){
@@ -18,9 +22,10 @@ export class ClientService {
     return this.address.asObservable();
   }
 
-  getClients() : any {
-    return [{id:1, name:'Juan', address: 'zzzzzzz 444'}, 
-             {id:2, name:'Gaston', address: 'eeeeee 111'}, 
-             {id:3, name:'Fernando', address: 'lllll 555'}];
+  getClients() {
+    this.http.get(this.url).subscribe({
+      next: resp =>{this.clients = resp},
+      error: err => {console.log(err)}
+    });
   }
 }

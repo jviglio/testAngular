@@ -6,11 +6,10 @@ import { ClientService } from '../../client.service';
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.scss'
 })
-export class ListaComponent {
-  clintes: any;    
+export class ListaComponent {  
 
   constructor(public clientService: ClientService){    
-    this.clintes = clientService.getClients();
+    clientService.getClients();    
   }
 
   showAddress(address: string | undefined){

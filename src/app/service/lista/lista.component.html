@@ -1,6 +1,6 @@
 <p>Lista de clientes</p>
 
-<li *ngFor="let c of clintes">    
+<li *ngFor="let c of clientService.clients">    
     <a (click)='showAddress(c.address)'>{{c.name}}</a>
 </li>
 <app-detalle></app-detalle>

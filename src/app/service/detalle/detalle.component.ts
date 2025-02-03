@@ -13,7 +13,7 @@ export class DetalleComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.clientService.getAddessObservable().subscribe(
+    this.clientService.address$.subscribe(
       value => this.address = value
     )
   }

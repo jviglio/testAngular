@@ -14,7 +14,7 @@ export class ListaComponent {
 
   showAddress(address: string | undefined){
     if(address){
-      this.clientService?.setAddress(address);      
+      this.clientService.setAddress(address);      
     }       
   }
 }

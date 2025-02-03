@@ -6,21 +6,18 @@ import { environment } from '../environments/environment.development';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientService {  
+export class ClientService {    
+  url: string = environment.apiBaseUrl + '/Client';
+  public clients: any;  
   private address = new BehaviorSubject<string>("");
-  url: string = environment.apiBaseUrl + '/WeatherForecast';
-  public clients: any;
+  address$ = this.address.asObservable();
 
   constructor(private http: HttpClient) { 
   }
 
   setAddress(address: string){
     this.address.next(address);
-  }
-
-  getAddessObservable() : Observable<string> {
-    return this.address.asObservable();
-  }
+  } 
 
   getClients() {
     this.http.get(this.url).subscribe({

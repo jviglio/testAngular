@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrl: './parent.component.scss'
+})
+export class ParentComponent {
+  mensaje: string = '';
+
+  recibirMensaje(mensaje: string) {
+    this.mensaje = mensaje;
+  }
+}

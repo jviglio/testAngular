@@ -7,10 +7,12 @@ import { Anidado2Component } from './routing/anidado2/anidado2.component';
 import { ServiceComponent } from './service/service.component';
 import { ListaComponent } from './service/lista/lista.component';
 import { DetalleComponent } from './service/detalle/detalle.component';
+import { OutputComponent } from './output/output.component';
 
 const routes: Routes = [
   { path: '', component: InputComponent},
   { path: 'input', component: InputComponent},
+  { path: 'output', component: OutputComponent},
   { path: 'routing', component: RoutingComponent, children:[
     {path: 'anidado1/:id', component: Anidado1Component},
     {path: 'anidado2/:id', component: Anidado2Component}

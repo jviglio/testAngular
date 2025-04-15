@@ -17,4 +17,8 @@ export class ListaComponent {
       this.clientService.setAddress(address);      
     }       
   }
+
+  print(modo: string){
+    this.clientService.print(modo);    
+  }
 }

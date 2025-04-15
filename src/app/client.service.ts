@@ -7,7 +7,7 @@ import { environment } from '../environments/environment.development';
   providedIn: 'root'
 })
 export class ClientService {    
-  url: string = environment.apiBaseUrl + '/Client';
+  url: string = environment.apiBaseUrl + '/Client'; ;
   public clients: any;  
   private address = new BehaviorSubject<string>("");
   address$ = this.address.asObservable();
@@ -20,8 +20,15 @@ export class ClientService {
   } 
 
   getClients() {
-    this.http.get(this.url).subscribe({
+    this.http.get(this.url + '/GetClient').subscribe({
       next: resp =>{this.clients = resp},
+      error: err => {console.log(err)}
+    });
+  }
+
+  print(modo : string){        
+    this.http.post(this.url+'/Print?modo=' + modo, null).subscribe({
+      next: resp =>{console.log(resp)},
       error: err => {console.log(err)}
     });
   }

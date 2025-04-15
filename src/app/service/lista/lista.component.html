@@ -3,4 +3,7 @@
 <li *ngFor="let c of clientService.clients">    
     <a (click)='showAddress(c.address)'>{{c.name}}</a>
 </li>
+<br/>
+<input type="button" value="Imprimir en Archivo" (click)='print("archivo")'/>
+<input type="button" value="Mostrar en Consola" (click)='print("consola")' style="margin-left: 10px;"/>
 <app-detalle></app-detalle>

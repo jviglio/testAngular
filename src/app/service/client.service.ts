@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient} from "@angular/common/http"
-import { environment } from '../environments/environment.development';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +28,8 @@ export class ClientService {
 
   print(modo : string){        
     this.http.post(this.url+'/Print?modo=' + modo, null).subscribe({
-      next: resp =>{console.log(resp)},
-      error: err => {console.log(err)}
+      next: resp =>{},
+      error: err => {}
     });
   }
 }

@@ -8,6 +8,7 @@ import { ServiceComponent } from './service/service.component';
 import { ListaComponent } from './service/lista/lista.component';
 import { DetalleComponent } from './service/detalle/detalle.component';
 import { OutputComponent } from './output/output.component';
+import { SignalComponent } from './signal/signal.component';
 
 const routes: Routes = [
   { path: '', component: InputComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'service', component: ServiceComponent, children:[
     {path:'lista', component: ListaComponent},
     {path:'detalle', component: DetalleComponent}
-  ]}
+  ]},
+  { path: 'signal', component: SignalComponent }
 ];
 
 @NgModule({

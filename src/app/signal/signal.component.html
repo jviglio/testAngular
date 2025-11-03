@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Ejemplo de Signal</h2>
+
+  <p>Valor actual: <strong>{{ count() }}</strong></p>
+  <p>Valor doble (computed): <strong>{{ doubleCount() }}</strong></p>
+
+  <br/>
+  
+  <p>Valor actual Input: <strong>{{ input }}</strong></p>
+  <p>Valor doble Input (computed): <strong>{{ doubleInput() }}</strong></p>
+
+
+  <button (click)="decrement()">-</button>
+  <button (click)="increment()">+</button>
+  <button (click)="reset()">Reset</button>
+</div>

@@ -19,7 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule} from "@angular/common/http";
 import { ParentComponent } from './output/parent/parent.component';
 import { ChildComponent } from './output/child/child.component';
-import { SignalComponent } from './signal/signal.component'
+import { SignalComponent } from './signal/signal.component';
+import { SubscribeComponent } from './subscribe/subscribe.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SignalComponent } from './signal/signal.component'
     HomeComponent,
     ParentComponent,
     ChildComponent,
-    SignalComponent
+    SignalComponent,
+    SubscribeComponent
   ],
   imports: [
     BrowserModule,

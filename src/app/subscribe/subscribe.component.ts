@@ -7,20 +7,12 @@ import { UserService } from './user.service';
   styleUrl: './subscribe.component.scss'
 })
 export class SubscribeComponent {
-  currentUser = '';
+  user$ = this.userService.user$;
 
   constructor(private userService: UserService){}
 
-  ngOnInit() {
-    this.userService.user$.subscribe(user => {
-      this.currentUser = user;
-    })
-  }
-
   public loadFromApi() {
-    this.userService.getUserFromApi().subscribe(user => {
-      this.currentUser = user;
-    });
+    this.userService.getUserFromApi().subscribe();
   }
 
   public updateUser(){

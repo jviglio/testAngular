@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PadreComponent } from './input/padre/padre.component';
 import { HijoComponent } from './input/hijo/hijo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './input/input/input.component';
 import { OutputComponent } from './output/output.component';
 import { IndiceComponent } from './indice/indice.component';
@@ -16,7 +16,9 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule} from "@angular/common/http";
 import { ParentComponent } from './output/parent/parent.component';
 import { ChildComponent } from './output/child/child.component';
-import { SubscribeComponent } from './subscribe/subscribe.component'
+import { SubscribeComponent } from './subscribe/subscribe.component';
+import { TestComponent } from './test/test.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,14 @@ import { SubscribeComponent } from './subscribe/subscribe.component'
     HomeComponent,
     ParentComponent,
     ChildComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   

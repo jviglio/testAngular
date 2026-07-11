@@ -6,6 +6,8 @@ import { ListaComponent } from './service/lista/lista.component';
 import { DetalleComponent } from './service/detalle/detalle.component';
 import { OutputComponent } from './output/output.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { TestComponent } from './test/test.component';
+import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   { path: '', component: InputComponent},
@@ -17,7 +19,9 @@ const routes: Routes = [
     {path:'detalle', component: DetalleComponent}
   ]},
   { path: 'signal', loadChildren: () => import('./signal/signal.module').then(m => m.SignalModule) },
-  { path: 'subscribe', component: SubscribeComponent}
+  { path: 'subscribe', component: SubscribeComponent}, 
+  { path: 'forms', component: FormsComponent}, 
+  { path: 'test', component: TestComponent }
 ];
 
 @NgModule({

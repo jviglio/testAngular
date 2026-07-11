@@ -1,0 +1,15 @@
+<ul>
+    @for (item of items(); track item.id) {
+    <li>{{ item.name }} x{{ item.qty }} — {{ item.price * item.qty }}</li>
+    }
+</ul>
+<p>Total: {{ total() }}</p>
+<p>Envío gratis: {{ freeShipping() ? 'Sí' : 'No' }}</p>
+
+<button (click)="addItem({ id: 1, name: 'Mouse', price: 15000, qty: 1 })">
+  Agregar mouse
+</button>
+<button (click)="addItem({ id: 2, name: 'Teclado', price: 40000, qty: 1 })">
+  Agregar teclado
+</button>
+<button (click)="resetCart()">Vaciar carrito</button>

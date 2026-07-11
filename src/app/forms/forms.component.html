@@ -1,0 +1,36 @@
+<form [formGroup]="form">
+  <label>Company Name</label>
+  <input formControlName="companyName" />
+  @if (form.get('companyName')?.touched && form.get('companyName')?.hasError('required')) {
+    <div>El nombre es obligatorio.</div>
+  }
+  @if (form.get('companyName')?.touched && form.get('companyName')?.hasError('minlength')) {
+    <div>Debe tener al menos 8 caracteres.</div>
+  }
+  <br/>
+
+  <label>Tax ID</label>
+  <input formControlName="taxId" />
+  @if (form.get('taxId')?.touched && form.get('taxId')?.hasError('required')) {
+    <div>El tax ID es obligatorio.</div>
+  }
+  @if (form.get('taxId')?.touched && form.get('taxId')?.hasError('minlength')) {
+    <div>Debe tener al menos 8 caracteres.</div>
+  }
+
+  <div formArrayName="phones">
+    @for (phone of phones.controls; track phone; let i = $index) {
+      <div>
+        <label>Phone {{ i + 1 }}</label>
+        <input [formControlName]="i" />
+        <button type="button" (click)="removePhone(i)">Eliminar</button>
+        @if (phones.at(i).touched && phones.at(i).hasError('required')) {
+          <div>El teléfono es obligatorio.</div>
+        }
+      </div>
+    }
+  </div>
+
+  <button type="button" (click)="addPhone()">Agregar teléfono</button>
+  <button type="button" (click)="save()" [disabled]="form.invalid">Guardar</button>
+</form>
